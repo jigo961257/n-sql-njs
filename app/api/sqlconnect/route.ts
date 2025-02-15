@@ -52,10 +52,12 @@ export async function POST(request: NextRequest) {
             { status: 200 }
         )
 
-    } catch (error: any) {
+    } catch (error) {
+        // @ts-ignore
         console.error("API Route Error:", error?.message);
         return NextResponse.json(
-            { error: error.message },
+            // @ts-ignore
+            { error: error?.message },
             { status: 500 }
         )
     }
