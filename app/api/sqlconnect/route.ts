@@ -1,5 +1,5 @@
 import { getConnectionPool } from "@/app/libs/db";
-import mssql, { MSSQLError } from "mssql";
+import mssql from "mssql";
 import { NextRequest, NextResponse } from "next/server";
 
 interface PostData {
@@ -52,7 +52,7 @@ export async function POST(request: NextRequest) {
             { status: 200 }
         )
 
-    } catch (error: MSSQLError | any) {
+    } catch (error: any) {
         console.error("API Route Error:", error?.message);
         return NextResponse.json(
             { error: error.message },
