@@ -1,6 +1,6 @@
 import { getConnectionPool } from "@/app/libs/db";
+import mssql, { MSSQLError } from "mssql";
 import { NextRequest, NextResponse } from "next/server";
-import mssql, { MSSQLError } from "mssql"
 
 interface PostData {
     username: string;
